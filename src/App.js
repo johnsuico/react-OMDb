@@ -1,26 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 
-// function App() {
-//   const [todos, setTodos] = useState([]);
-
-//   useEffect(() => {
-//     Axios.get('https://jsonplaceholder.typicode.com/todos')
-//       .then(res => {
-//         setTodos(res.data);
-//       })
-//   }, []);
-
-//   return (
-//     <div className="App">
-//       <h1>React App</h1>
-//       {todos.map((todo) => (
-//         <li key={todo.id}>{todo.title}</li>
-//       ))};
-//     </div>
-//   );
-// }
-
 function App() {
   const [movie, setMovie] = useState([]);
   const [click, setClick] = useState(false);
