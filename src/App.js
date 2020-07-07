@@ -43,7 +43,7 @@ function App() {
       <h1>Title: {movie.Title}</h1>
       <img src={movie.Poster} alt={movie.Title + ' Poster'}/>
       <button onClick={handleClick}> Click Me! </button>
-      {click && <h1>You Clicked me</h1>}
+      {click && <h1>You Clicked Me!</h1>}
     </div>
   )
 }
