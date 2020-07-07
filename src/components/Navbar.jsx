@@ -2,11 +2,17 @@ import React, {useState} from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import '../App.css';
 
-function Navbar() {
-  let [search, setSearch] = useState();
+function Navbar(props) {
+  let [search, setSearch] = useState('');
 
   function onChange(e) {
-    setSearch = e.target.value;
+    setSearch(e.target.value);
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    props.search(search);
+    // console.log(search);
   }
 
   return (
@@ -17,7 +23,10 @@ function Navbar() {
             <Link to="/" className="logo">Movie LookUp</Link>
           </div>
           <div className="search">
-            <input type="text" placeholder="Enter in Movie Title" className="searchBar" onChange={onChange} value={search}/>
+            <form onSubmit={onSubmit}>
+              <input type="text" placeholder="Enter in Movie Title" className="searchBar" onChange={onChange} value={search}/>
+              <input style={{display: "none"}}type="submit"/>
+            </form>
           </div>
         </div>
       </nav>
