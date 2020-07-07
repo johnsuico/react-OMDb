@@ -3,7 +3,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import '../App.css';
 
 function Navbar() {
-  const [search, setSearch] = useState('');
+  let [search, setSearch] = useState();
+
+  function onChange(e) {
+    setSearch = e.target.value;
+  }
 
   return (
     <Router>
@@ -13,7 +17,7 @@ function Navbar() {
             <Link to="/" className="logo">Movie LookUp</Link>
           </div>
           <div className="search">
-            <input type="text" placeholder="Enter in Movie Title" className="searchBar" />
+            <input type="text" placeholder="Enter in Movie Title" className="searchBar" onChange={onChange} value={search}/>
           </div>
         </div>
       </nav>
