@@ -12,7 +12,6 @@ function Navbar(props) {
   function onSubmit(e) {
     e.preventDefault();
     props.search(search);
-    // console.log(search);
   }
 
   return (

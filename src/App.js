@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import Axios from 'axios';
 import './App.css';
 
 
 // Components
 import Navbar from './components/Navbar';
-import MovieCard from './components/MovieCard';
+import Home from './components/Home';
+import MovieResults from './components/MovieResults';
+import About from './components/About'
 
 function App() {
   const [movie, setMovie] = useState([]);
 
-  function search(title) {
-    let replaceTitle = title.split(' ').join('+');
+  function search(searchItem) {
+    let replaceTitle = searchItem.split(' ').join('+');
 
     const url = "https://omdbapi.com/?apikey=5000d172&s="+replaceTitle;
     
@@ -24,22 +26,11 @@ function App() {
 
   return (
     <div>
+      <Navbar movie={movie} search={search}/>
 
-      <header>
-        <Navbar search={search} />
-      </header>
-
-      <div className="container showcase">
-        {movie.map((movie) => (
-          <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} key={movie.imdbID}/>
-        ))}
-      </div>
-
-      {/* {movie.map((movie) => (
-        <li key={movie.imdbID}>{movie.Title}</li>
-      ))} */}
-
+      <MovieResults movie={movie} />
     </div>
+
   )
 }
 

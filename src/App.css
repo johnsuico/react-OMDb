@@ -61,7 +61,6 @@ nav {
 .movie-card {
   background-color: rgba(255, 255, 255, 0.30);
   width: 300px;
-  /* width: 20%; */
   display: flex;
   flex-direction: column;
   margin: 3%;
