@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import React, { useState } from 'react';
 import Axios from 'axios';
 import './App.css';
 
 
 // Components
 import Navbar from './components/Navbar';
-import Home from './components/Home';
 import MovieResults from './components/MovieResults';
-import About from './components/About'
 
 function App() {
   const [movie, setMovie] = useState([]);
