@@ -6,10 +6,9 @@ function App() {
   const [click, setClick] = useState(false);
 
   useEffect(() => {
-    Axios.get("http://omdbapi.com/?apikey=5000d172&t=Milpitas")
+    Axios.get("http://omdbapi.com/?apikey=5000d172&s=Lord")
       .then(res => {
-        setMovie(res.data);
-        // console.log(res.data);
+        setMovie(res.data.Search);
         // console.log(res.data.Title);
       })
   }, []);
@@ -20,10 +19,14 @@ function App() {
 
   return (
     <div>
-      <h1>Title: {movie.Title}</h1>
-      <img src={movie.Poster} alt={movie.Title + ' Poster'}/>
+      {/* <h1>Title: {movie.Search.Title}</h1>
+      <img src={movie.Search.Poster} alt={movie.Title + ' Poster'}/>
       <button onClick={handleClick}> Click Me! </button>
-      {click && <h1>You Clicked Me!</h1>}
+      {click && <h1>You Clicked Me!</h1>} */}
+
+      {movie.map((movie) => (
+        <h1>{movie.Title}</h1>
+      ))}
     </div>
   )
 }
