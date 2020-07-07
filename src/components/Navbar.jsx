@@ -13,11 +13,15 @@ function Navbar(props) {
     props.search(search);
   }
 
+  function setSearchBool() {
+    props.setIsSearch(false);
+  }
+
   return (
     <nav>
       <div className="nav-items container">
         <div className="logo">
-          <p className="logo">Movie LookUp</p>
+          <a className="logo" href="/" onClick={setSearchBool}>Movie LookUp</a>
         </div>
         <div className="search">
           <form onSubmit={onSubmit}>
