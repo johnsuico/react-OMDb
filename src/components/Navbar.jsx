@@ -24,7 +24,7 @@ function Navbar(props) {
           </div>
           <div className="search">
             <form onSubmit={onSubmit}>
-              <input type="text" placeholder="Enter in Movie Title" className="searchBar" onChange={onChange} value={search}/>
+              <input type="text" placeholder="Enter in Movie Title" className="searchBar" onChange={onChange} value={search} required/>
               <input style={{display: "none"}}type="submit"/>
             </form>
           </div>

@@ -10,10 +10,10 @@ import MovieCard from './components/MovieCard';
 
 function App() {
   const [movie, setMovie] = useState([]);
-  const [movieURL, setMovieURL] = useState();
 
   function search(title) {
     let replaceTitle = title.split(' ').join('+');
+
     const url = "https://omdbapi.com/?apikey=5000d172&s="+replaceTitle;
     
     Axios.get(url)
@@ -31,7 +31,7 @@ function App() {
 
       <div className="container showcase">
         {movie.map((movie) => (
-          <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} />
+          <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} key={movie.imdbID}/>
         ))}
       </div>
 
