@@ -49,3 +49,13 @@ nav {
 .searchBar:focus {
   outline: none;
 }
+
+/* MovieCard */
+.showcase {
+  margin-top: 5%;
+}
+
+.movie-card {
+  background-color: rgba(255, 255, 255, 0.30);
+  width: 300px;
+}

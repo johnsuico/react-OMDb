@@ -6,6 +6,7 @@ import './App.css';
 
 // Components
 import Navbar from './components/Navbar';
+import MovieCard from './components/MovieCard';
 
 function App() {
   const [movie, setMovie] = useState([]);
@@ -28,9 +29,15 @@ function App() {
         <Navbar search={search} />
       </header>
 
-      {movie.map((movie) => (
+      <div className="container showcase">
+        {movie.map((movie) => (
+          <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} />
+        ))}
+      </div>
+
+      {/* {movie.map((movie) => (
         <li key={movie.imdbID}>{movie.Title}</li>
-      ))}
+      ))} */}
 
     </div>
   )
