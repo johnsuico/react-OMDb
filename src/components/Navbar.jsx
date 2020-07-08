@@ -21,12 +21,12 @@ function Navbar(props) {
     <nav>
       <div className="nav-items container">
         <div className="logo">
-          <a className="logo" href="/" onClick={setSearchBool}>Movie LookUp</a>
+          <a className="logo" href="/" onClick={setSearchBool}>LookUp</a>
         </div>
         <div className="search">
           <form onSubmit={onSubmit}>
             <input type="text" placeholder="Enter in Movie Title" className="searchBar" onChange={onChange} value={search} required/>
-            <input style={{display: "none"}}type="submit"/>
+            <input style={{display: "none"}} type="submit"/>
           </form>
         </div>
       </div>

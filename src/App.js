@@ -27,10 +27,8 @@ function App() {
   return (
     <div>
       <Navbar movie={movie} search={search} setIsSearch={setIsSearch}/>
-
       {isSearch ? <MovieResults movie={movie}/> : <Home />}
     </div>
-
   )
 }
 
