@@ -3,13 +3,16 @@ import '../App.css';
 
 import MovieCard from './MovieCard';
 
-function MovieResults({ movie }) {
+function MovieResults({movie}) {
+
   return (
     <div className="container showcase">
-      {/* {movie.map((movie) => (
-        <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} key={movie.imdbID}/>
+      {/* {props.movie.map((movie) => (
+        <MovieCard title={props.movie.Title} year={props.movie.Year} poster={props.movie.Poster} key={props.movie.imdbID}/>
       ))} */}
-      <h1>{movie}</h1>
+      {movie.map((movie) => {
+        return <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} key={movie.imdbID}/>
+      })}
     </div>
   )
 }

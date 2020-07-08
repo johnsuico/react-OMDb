@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import './App.css';
 
@@ -16,6 +17,7 @@ import Home from './components/Home';
 function App() {
   const [movie, setMovie] = useState([]);
   const [isHome, setIsHome] = useState(true);
+  const [searched, setSearched] = useState(false);
 
   let [stringQuery, setStringQuery] = useState('');
   let [query, setQuery] = useState(''); // Store queries from search bar
@@ -27,11 +29,13 @@ function App() {
     const url = "https://omdbapi.com/?apikey=5000d172&s="+title;
     console.log(url);
     
-    // Axios.get(url)
-    //   .then(res => {
-    //     setMovie(res.data.Search);
-    //     // setIsSearch(true);
-    //   })
+    Axios.get(url)
+      .then(res => {
+        setMovie(res.data.Search);
+      })
+    
+    setIsHome(false);
+    setSearched(true);
   }
 
   function onChange(e) {
@@ -44,19 +48,14 @@ function App() {
   }
 
   return (
-    // <div>
-    //   <Navbar movie={movie} search={search} setIsSearch={setIsSearch}/>
-    //   {isSearch ? <MovieResults movie={movie}/> : <Home />}
-    // </div>
-
     <Router>
       <header>
         <nav>
           <div className="nav-items container">
             <div className="logo-container">
-              <Link to="/" className="logo">LookUp</Link>
+              <Link to="/" className="logo" onClick={()=>{setIsHome(true); setSearched(false)}}>LookUp</Link>
             </div>
-            {isHome && 
+            {!isHome && 
               <div className="search-container">
                 <form onSubmit={onSubmit}>
                   <input type="text" placeholder="Start Searching" className="searchBar container" onChange={onChange} value={query} required/>
@@ -68,12 +67,14 @@ function App() {
         </nav>
       </header>
 
+      {searched && <Redirect to={"/movies/"+stringQuery} />}
+
       <Switch>
         <Route exact path="/">
           <Home setQuery={setQuery} query={query} search={search}/>
         </Route>
-        <Route exact path="/movies/:id">
-          <MovieResults />
+        <Route exact path={"/movies/" + stringQuery}>
+          <MovieResults stringQuery={stringQuery} movie={movie}/>
         </Route>
       </Switch>
     </Router>
