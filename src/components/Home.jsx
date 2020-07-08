@@ -18,7 +18,7 @@ function Home(props) {
 
         <div className="hero-info">
           <h2 className="hero-caption">Movie information at your fingertips</h2>
-          <p className="hero-subCaption">Powered by <a href="https://omdbapi.com/" target="_blank">OMDb</a></p>
+          <p className="hero-subCaption">Powered by <a href="https://omdbapi.com/" target="_blank" rel="noopener noreferrer">OMDb</a></p>
         </div>
 
         <form onSubmit={onSubmit}>

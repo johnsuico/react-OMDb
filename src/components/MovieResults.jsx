@@ -20,8 +20,8 @@ function MovieResults(props) {
       })
 
     props.setIsHome(false);
-
-  }, [])
+    
+  }, [props, title])
 
   return(
     <div className="container showcase">

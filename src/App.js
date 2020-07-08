@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import Axios from 'axios';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   Redirect,
-  useParams
 } from "react-router-dom";
 import './App.css';
 
