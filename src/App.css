@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-body {
+*, *::after, *::before {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background-color: #545E75;
+}
+
+body {
+  background-color: #7DB4D2;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
 .container {
-  width: 95%;
+  width: 90%;
   margin: auto;
 }
 
@@ -18,39 +23,86 @@ body {
 nav {
   margin: 0;
   padding: 0;
-  background-color: #474f63;
-  height: 6vh;
+  height: 64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  overflow-x: hidden;
 }
 
 .nav-items {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  color: white;
   text-decoration: none;
-  font-size: 1.75rem;
-  cursor: pointer;
-  padding: 10px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
 }
 
 .searchBar {
   border: none;
-  width: 400px;
-  height: 40px; 
-  font-size: 1.1rem;
-  background-color: rgba(255, 255, 255, 0.30);
-  border-radius: 20px;
-  margin-right: 5%;
-  padding: 0 0 0 25px;
-  color: white;
+  width: 430px;
+  height: 36px;
+  padding-left: 15px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.62);
+  color: rgba(23, 23, 23, 0.71);
+}
+
+.searchBar::placeholder {
+  color: rgba(23, 23, 23, 0.71);
 }
 
 .searchBar:focus {
   outline: none;
 }
+
+/* Home/Hero Page */
+.hero-bg {
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;  
+  display: flex;
+  align-items: center;
+}
+
+.hero-info {
+  margin-bottom: 3%;
+}
+
+.hero-caption {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.hero-subCaption {
+  font-size: 1.5rem;
+}
+
+.hero-subCaption a {
+  color: white;
+}
+
+.hero-searchBar {
+  width: 45%;
+  height: 60px;
+  font-size: 1.2rem;
+}
+
+.hero-searchBar::placeholder {
+  font-size: 1.2rem;
+}
+
 
 /* MovieCard */
 .showcase {
@@ -78,30 +130,4 @@ nav {
   font-size: 1.2rem;
   font-weight: 400;
   margin: 2% 5%;
-}
-
-/* Hero */
-.hero {
-  border: 1px solid red;
-  height: 94vh;
-  display: flex;
-  align-items: center;
-}
-
-.hero-container {
-  border: 1px solid yellow;
-  margin-left: 5%;
-  /* width: 30%; */
-}
-
-.hero-caption {
-  font-size: 3rem;
-}
-
-.hero-subCaption {
-  font-size: 2rem;
-}
-
-.hero-addInfo {
-  font-size: 1.6rem;
 }

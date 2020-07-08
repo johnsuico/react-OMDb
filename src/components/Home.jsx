@@ -2,11 +2,16 @@ import React from 'react';
 
 function Home() {
   return(
-    <div className="hero container">
-      <div className="hero-container">
-        <h2 className="hero-caption">Welcome to LookUp</h2>
-        <h3 className="hero-subCaption">Find information about movies</h3>
-        <p className="hero-addInfo">Powered by OMDb</p>
+    <div className="hero-bg">
+      <div className="hero-content container">
+
+        <div className="hero-info">
+          <h2 className="hero-caption">Movie information at your fingertips</h2>
+          <p className="hero-subCaption">Powered by <a href="https://omdbapi.com/" target="_blank">OMDb</a></p>
+        </div>
+
+        <input type="text" placeholder="Start Searching" className="searchBar container hero-searchBar"/>
+
       </div>
     </div>
   )
