@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
+import { useParams } from 'react-router-dom';
 
 import MovieCard from './MovieCard';
+import Axios from 'axios';
 
-function MovieResults({movie, stringQuery}) {
+function MovieResults(props) {
+  const [movie, setMovie]= useState([]);
+  
+  let {title} = useParams();
+  let regTitle = title.split('+').join(' ');
 
-  let title = stringQuery.split('+').join(' ');
+  useEffect(() => {
+    const url = "https://omdbapi.com/?apikey=5000d172&s="+title;
+    
+    Axios.get(url)
+      .then(res => {
+        setMovie(res.data.Search);
+      })
 
-  return (
+    props.setIsHome(false);
+
+  }, [])
+
+  return(
     <div className="container showcase">
       <div className="title-div container">
-        <h2 className="result-title">Showing Results for: "{title}"</h2>
+        <h2 className="result-title">Showing Results for: "{regTitle}"</h2>
       </div>
       <div className="card-container container">
         {movie.map((movie) => {

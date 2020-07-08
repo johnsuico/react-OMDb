@@ -8,7 +8,8 @@ function Home(props) {
 
   function onSubmit(e) {
     e.preventDefault();
-    props.search(props.query);
+    // props.search(props.query);
+    props.onSubmit(props.query);
   }
 
   return(

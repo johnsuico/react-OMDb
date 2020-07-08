@@ -5,7 +5,8 @@ import {
   Switch,
   Route,
   Link,
-  Redirect
+  Redirect,
+  useParams
 } from "react-router-dom";
 import './App.css';
 
@@ -15,36 +16,21 @@ import MovieResults from './components/MovieResults';
 import Home from './components/Home';
 
 function App() {
-  const [movie, setMovie] = useState([]);
   const [isHome, setIsHome] = useState(true);
   const [searched, setSearched] = useState(false);
 
   let [stringQuery, setStringQuery] = useState('');
   let [query, setQuery] = useState(''); // Store queries from search bar
 
-  function search() {
-    let title = query.split(' ').join('+');
-    setStringQuery(title);
-
-    const url = "https://omdbapi.com/?apikey=5000d172&s="+title;
-    console.log(url);
-    
-    Axios.get(url)
-      .then(res => {
-        setMovie(res.data.Search);
-      })
-    
-    setIsHome(false);
-    setSearched(true);
-  }
-
   function onChange(e) {
     setQuery(e.target.value);
   }
 
   function onSubmit(e) {
-    e.preventDefault();
-    search(query);
+    let title = query.split(' ').join('+');
+    setStringQuery(title);
+    setIsHome(false);
+    setSearched(true);
   }
 
   return (
@@ -71,10 +57,10 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <Home setQuery={setQuery} query={query} search={search}/>
+          <Home setQuery={setQuery} query={query} onSubmit={onSubmit}/>
         </Route>
-        <Route exact path={"/movies/" + stringQuery}>
-          <MovieResults stringQuery={stringQuery} movie={movie}/>
+        <Route path={"/movies/:title"}>
+          <MovieResults query={query} setIsHome={setIsHome}/>
         </Route>
       </Switch>
     </Router>
