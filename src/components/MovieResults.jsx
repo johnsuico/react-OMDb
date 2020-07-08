@@ -3,16 +3,20 @@ import '../App.css';
 
 import MovieCard from './MovieCard';
 
-function MovieResults({movie}) {
+function MovieResults({movie, stringQuery}) {
+
+  let title = stringQuery.split('+').join(' ');
 
   return (
     <div className="container showcase">
-      {/* {props.movie.map((movie) => (
-        <MovieCard title={props.movie.Title} year={props.movie.Year} poster={props.movie.Poster} key={props.movie.imdbID}/>
-      ))} */}
-      {movie.map((movie) => {
-        return <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} key={movie.imdbID}/>
-      })}
+      <div className="title-div container">
+        <h2 className="result-title">Showing Results for: "{title}"</h2>
+      </div>
+      <div className="card-container container">
+        {movie.map((movie) => {
+          return <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} key={movie.imdbID}/>
+        })}
+      </div>
     </div>
   )
 }

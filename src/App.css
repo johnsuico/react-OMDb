@@ -108,6 +108,15 @@ nav {
 .showcase {
   width: 100%;
   display: flex;
+  flex-direction: column;
+}
+
+.title-div {
+  margin-top: 100px;
+}
+
+.card-container {
+  display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
 }
@@ -117,7 +126,7 @@ nav {
   width: 300px;
   display: flex;
   flex-direction: column;
-  margin: 3%;
+  margin: 4% 3% 3% 3%;
 }
 
 .movie-card img {
