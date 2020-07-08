@@ -30,6 +30,8 @@ function App() {
   //     })
   // }
 
+  const {atHome, setAtHome} = useState(true);
+
   return (
     // <div>
     //   <Navbar movie={movie} search={search} setIsSearch={setIsSearch}/>
@@ -43,9 +45,11 @@ function App() {
             <div className="logo-container">
               <Link to="/" className="logo">LookUp</Link>
             </div>
-            <div className="search-container">
-              <input type="text" placeholder="Start Searching" className="searchBar container"/>
-            </div>
+            {atHome && 
+              <div className="search-container">
+                <input type="text" placeholder="Start Searching" className="searchBar container"/>
+              </div>
+            }
           </div>
         </nav>
       </header>
