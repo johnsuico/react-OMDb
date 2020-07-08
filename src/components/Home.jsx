@@ -1,6 +1,16 @@
 import React from 'react';
 
-function Home() {
+function Home(props) {
+
+  function onChange(e) {
+    props.setQuery(e.target.value);
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    props.search(props.query);
+  }
+
   return(
     <div className="hero-bg">
       <div className="hero-content container">
@@ -10,7 +20,10 @@ function Home() {
           <p className="hero-subCaption">Powered by <a href="https://omdbapi.com/" target="_blank">OMDb</a></p>
         </div>
 
-        <input type="text" placeholder="Start Searching" className="searchBar container hero-searchBar"/>
+        <form onSubmit={onSubmit}>
+          <input type="text" placeholder="Start Searching" className="searchBar container hero-searchBar" onChange={onChange} onSubmit={onSubmit} value={props.query}/>
+          <input style={{display: "none"}} type="submit"/>
+        </form>
 
       </div>
     </div>

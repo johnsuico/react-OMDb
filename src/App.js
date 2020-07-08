@@ -10,27 +10,38 @@ import './App.css';
 
 
 // Components
-import Navbar from './components/Navbar';
 import MovieResults from './components/MovieResults';
 import Home from './components/Home';
 
 function App() {
-  // const [movie, setMovie] = useState([]);
-  // const [isSearch, setIsSearch] = useState(false);
+  const [movie, setMovie] = useState([]);
+  const [isHome, setIsHome] = useState(true);
 
-  // function search(searchItem) {
-  //   let replaceTitle = searchItem.split(' ').join('+');
+  let [stringQuery, setStringQuery] = useState('');
+  let [query, setQuery] = useState(''); // Store queries from search bar
 
-  //   const url = "https://omdbapi.com/?apikey=5000d172&s="+replaceTitle;
+  function search() {
+    let title = query.split(' ').join('+');
+    setStringQuery(title);
+
+    const url = "https://omdbapi.com/?apikey=5000d172&s="+title;
+    console.log(url);
     
-  //   Axios.get(url)
-  //     .then(res => {
-  //       setMovie(res.data.Search);
-  //       setIsSearch(true);
-  //     })
-  // }
+    // Axios.get(url)
+    //   .then(res => {
+    //     setMovie(res.data.Search);
+    //     // setIsSearch(true);
+    //   })
+  }
 
-  const {atHome, setAtHome} = useState(true);
+  function onChange(e) {
+    setQuery(e.target.value);
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    search(query);
+  }
 
   return (
     // <div>
@@ -45,9 +56,12 @@ function App() {
             <div className="logo-container">
               <Link to="/" className="logo">LookUp</Link>
             </div>
-            {atHome && 
+            {isHome && 
               <div className="search-container">
-                <input type="text" placeholder="Start Searching" className="searchBar container"/>
+                <form onSubmit={onSubmit}>
+                  <input type="text" placeholder="Start Searching" className="searchBar container" onChange={onChange} value={query} required/>
+                  <input style={{display: "none"}} type="submit"/>
+                </form>
               </div>
             }
           </div>
@@ -55,8 +69,11 @@ function App() {
       </header>
 
       <Switch>
-        <Route path="/">
-          <Home />
+        <Route exact path="/">
+          <Home setQuery={setQuery} query={query} search={search}/>
+        </Route>
+        <Route exact path="/movies/:id">
+          <MovieResults />
         </Route>
       </Switch>
     </Router>
