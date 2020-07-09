@@ -5,16 +5,19 @@ function MovieCard(props) {
 
   return (
     <div className="movie-card">
-        <img src={props.poster} alt={props.title + "Poster"}/> 
-        <h2 className="movie-info">
-          <span className="movie-title">
-            {props.title + ' '}
-          </span>
-          <span className="movie-year">
-            ({props.year})
-          </span>
-        </h2>
-        <Link to={`/m/i/${props.id}`}>
+
+        {props.poster==="N/A" ?
+          <img src="/posterNotFound.jpg" alt="Poster not found"/>
+          :
+          <img src={props.poster} alt={props.title + "Poster"}/>
+        }
+        <div className="movie-info-container">
+          <div className="movie-info">
+            <h2 className="movie-title">{props.title + ' '}</h2>
+            <h2 className="movie-year">{props.year}</h2>
+          </div>
+        </div>
+        <Link to={`/m/i/${props.id}`} className="movieInfo-btn">
           More Info
         </Link>
     </div>
