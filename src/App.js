@@ -13,6 +13,7 @@ import './App.css';
 import MovieResults from './components/MovieResults';
 import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
+import MovieInfo from './components/MovieInfo';
 
 function App() {
   const [isHome, setIsHome] = useState(true);
@@ -52,14 +53,17 @@ function App() {
         </nav>
       </header>
 
-      {searched && <Redirect to={"/movies/"+stringQuery} />}
+      {searched && <Redirect to={"/m/"+stringQuery} />}
 
       <Switch>
         <Route exact path="/">
           <Home setQuery={setQuery} query={query} onSubmit={onSubmit}/>
         </Route>
-        <Route path={"/movies/:title"}>
+        <Route exact path={"/m/:title"}>
           <MovieResults query={query} setIsHome={setIsHome}/>
+        </Route>
+        <Route exact path={"/m/i/:id"}>
+          <MovieInfo setIsHome={setIsHome}/>
         </Route>
         <Route>
           <PageNotFound />

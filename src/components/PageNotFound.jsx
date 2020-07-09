@@ -1,7 +1,4 @@
 import React from 'react';
-import {FaQuestion} from 'react-icons/fa';
-
-import Home from './Home';
 
 function PageNotFound() {
   return(

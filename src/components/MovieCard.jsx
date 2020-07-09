@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function MovieCard(props) {
 
@@ -13,6 +14,9 @@ function MovieCard(props) {
             ({props.year})
           </span>
         </h2>
+        <Link to={`/m/i/${props.id}`}>
+          More Info
+        </Link>
     </div>
   )
 }

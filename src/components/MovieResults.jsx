@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import '../App.css';
 import { useParams } from 'react-router-dom';
 
 import MovieCard from './MovieCard';
@@ -34,7 +33,7 @@ function MovieResults(props) {
           <MovieNotFound />
           :
           movie.map((movie) => {
-            return <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} key={movie.imdbID}/>
+            return <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} key={movie.imdbID} id={movie.imdbID} stringTitle={title}/>
           })
         }
       </div>

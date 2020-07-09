@@ -28,6 +28,7 @@ nav {
   display: flex;
   align-items: center;
   position: absolute;
+  top: 0;
   overflow-x: hidden;
 }
 
@@ -156,4 +157,9 @@ nav {
 /* Movie Not Found */
 .movieNotFound {
   margin-top: 5%;
+}
+
+/* Movie Info */
+.movieInfo-container {
+  margin-top: 100px;
 }
