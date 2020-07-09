@@ -152,3 +152,8 @@ nav {
 .notFound h2 {
   font-size: 3rem;
 }
+
+/* Movie Not Found */
+.movieNotFound {
+  margin-top: 5%;
+}

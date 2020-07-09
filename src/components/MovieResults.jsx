@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import MovieCard from './MovieCard';
+import MovieNotFound from './MovieNotFound';
 import Axios from 'axios';
 
 function MovieResults(props) {
@@ -29,9 +30,13 @@ function MovieResults(props) {
         <h2 className="result-title">Showing Results for: "{regTitle}"</h2>
       </div>
       <div className="card-container container">
-        {movie.map((movie) => {
-          return <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} key={movie.imdbID}/>
-        })}
+        {movie === undefined ? 
+          <MovieNotFound />
+          :
+          movie.map((movie) => {
+            return <MovieCard title={movie.Title} year={movie.Year} poster={movie.Poster} key={movie.imdbID}/>
+          })
+        }
       </div>
     </div>
   )
