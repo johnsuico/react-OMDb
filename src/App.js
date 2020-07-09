@@ -12,6 +12,7 @@ import './App.css';
 // Components
 import MovieResults from './components/MovieResults';
 import Home from './components/Home';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   const [isHome, setIsHome] = useState(true);
@@ -59,6 +60,9 @@ function App() {
         </Route>
         <Route path={"/movies/:title"}>
           <MovieResults query={query} setIsHome={setIsHome}/>
+        </Route>
+        <Route>
+          <PageNotFound />
         </Route>
       </Switch>
     </Router>
