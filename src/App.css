@@ -186,5 +186,58 @@ nav {
 
 /* Movie Info */
 .movieInfo-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movieInfo-margin {
   margin-top: 100px;
+}
+
+.movieInfo-container {
+  width: 90%;
+  margin: 3% auto;
+}
+
+.movieInfo-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.movieInfoPoster {
+  width: 35%;
+}
+
+.moreMovieInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.movieInfo-plot-container {
+  width: 90%; 
+  margin: 3% auto;
+}
+
+.movieInfo-header {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.director-container {
+  margin-right: 25%;
+}
+
+.movieRatings-title {
+  justify-content: center;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-around;
+}
+
+.movieRating {
+  text-align: center;
+  font-size: 1.3rem;
 }

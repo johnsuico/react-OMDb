@@ -7,7 +7,7 @@ function MovieCard(props) {
     <div className="movie-card">
 
         {props.poster==="N/A" ?
-          <img src="/posterNotFound.jpg" alt="Poster not found"/>
+          <img src="/posterNotFound.png" alt="Poster not found"/>
           :
           <img src={props.poster} alt={props.title + "Poster"}/>
         }
