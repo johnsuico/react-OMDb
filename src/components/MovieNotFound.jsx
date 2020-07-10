@@ -6,7 +6,7 @@ function MovieNotFound() {
   return (
     <div className="movieNotFound">
       <FaExclamationCircle className="notFound-icon"/>
-      <h2> We couldn't find the page you were looking for. Sorry about that! </h2>
+      <h2> We couldn't find the movie you looked up. Try again?</h2>
       <Link to="/" className="linkHome">Go back home</Link>
     </div>
   )
