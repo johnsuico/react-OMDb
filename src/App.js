@@ -66,7 +66,7 @@ function App() {
           <MovieInfo setIsHome={setIsHome}/>
         </Route>
         <Route>
-          <PageNotFound />
+          <PageNotFound setIsHome={setIsHome}/>
         </Route>
       </Switch>
     </Router>

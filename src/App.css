@@ -169,29 +169,54 @@ nav {
 
 /* 404 Page */
 .notFound {
-  text-align: center;
   width: 100%;
-  height: 100%;
-  padding-top: 10%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .notFound h2 {
-  font-size: 3rem;
+  font-size: 1.6rem;
+  margin: 10px 0;;
+}
+
+.notFound-icon {
+  height: 100px;
+  width: 100px;
+  margin: 10px 0;
+}
+
+.linkHome {
+  text-decoration: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 20px;
+  margin: 10px 0;
+  transition: ease-in-out 0.3s;
+}
+
+.linkHome:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Movie Not Found */
 .movieNotFound {
-  margin-top: 5%;
+  /* margin-top: 5%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 86vh;
+  width: 100%;
 }
 
 /* Movie Info */
 .movieInfo-container {
   display: flex;
   justify-content: space-between;
-}
-
-.movieInfo-margin {
-  margin-top: 100px;
 }
 
 .movieInfo-container {
