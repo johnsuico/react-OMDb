@@ -224,6 +224,10 @@ nav {
   margin: 3% auto;
 }
 
+.movieInfo-title {
+  justify-content: center;
+}
+
 .movieInfo-flex {
   display: flex;
   flex-direction: column;

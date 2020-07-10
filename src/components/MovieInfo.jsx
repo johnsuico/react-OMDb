@@ -26,7 +26,7 @@ function MovieInfo(props) {
         <img src={movieInfo.Poster} alt={props.title + "Poster"} className="movieInfoPoster"/>
       }
       <div className="moreMovieInfo">
-        <h2 className="movieInfo-container">{movieInfo.Title} ({movieInfo.Year})</h2>
+        <h2 className="movieInfo-container movieInfo-title">{movieInfo.Title} ({movieInfo.Year})</h2>
         <div className="movieInfo-plot-container">
           <p className="movieInfo-header">Plot Summary</p>
           <p className="movieInfo-para">{movieInfo.Plot}</p>
