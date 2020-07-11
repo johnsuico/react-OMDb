@@ -91,7 +91,7 @@ body {
   align-items: center;
 }
 
-.notFound h2 {
+.notFound-title {
   font-size: 1.6rem;
   margin: 10px 0;;
 }
@@ -126,60 +126,32 @@ body {
   width: 100%;
 }
 
-/* Movie Info */
-/* .movieInfo-container {
-  display: flex;
-  justify-content: space-between;
+@media only screen and (max-width: 768px) {
+  .notFound-title {
+    text-align: center;
+  }
 }
 
-.movieInfo-container {
-  width: 90%;
-  margin: 3% auto;
+@media only screen and (max-width: 414px) {
+  .notFound-icon {
+    width: 70px;
+    height: 70px;
+  }
+  .movieNotFound {
+    height: 65vh;
+  }
+  .notFound-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }
 
-.movieInfo-title {
-  justify-content: center;
+@media only screen and (max-width: 320px) {
+  .notFound-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .notFound-title {
+    font-size: 1rem;
+  }
 }
-
-.movieInfo-flex {
-  display: flex;
-  flex-direction: column;
-}
-
-.movieInfoPoster {
-  width: 35%;
-}
-
-.moreMovieInfo {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-.movieInfo-plot-container {
-  width: 90%; 
-  margin: 3% auto;
-}
-
-.movieInfo-header {
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.director-container {
-  margin-right: 25%;
-}
-
-.movieRatings-title {
-  justify-content: center;
-}
-
-.rating {
-  display: flex;
-  justify-content: space-around;
-}
-
-.movieRating {
-  text-align: center;
-  font-size: 1.3rem;
-} */
