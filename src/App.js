@@ -11,7 +11,7 @@ import './App.css';
 
 // Components
 import MovieResults from './components/MovieResults';
-import Home from './components/Home';
+import Home from './components/Home/Home';
 import PageNotFound from './components/PageNotFound';
 import MovieInfo from './components/MovieInfo';
 

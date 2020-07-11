@@ -63,48 +63,6 @@ nav {
   outline: none;
 }
 
-/* Home/Hero Page */
-.hero-bg {
-  background-image: url("/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  border: 1px solid transparent;  
-  display: flex;
-  align-items: center;
-}
-
-.hero-info {
-  margin-bottom: 3%;
-}
-
-.hero-caption {
-  font-size: 2.3rem;
-  margin-bottom: 10px;
-}
-
-.hero-subCaption {
-  font-size: 1.5rem;
-}
-
-.hero-subCaption a {
-  color: white;
-}
-
-.hero-searchBar {
-  width: 45%;
-  height: 60px;
-  font-size: 1.2rem;
-}
-
-.hero-searchBar::placeholder {
-  font-size: 1.2rem;
-}
-
-
 /* MovieCard */
 .showcase {
   width: 100%;
