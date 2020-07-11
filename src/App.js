@@ -13,7 +13,7 @@ import './App.css';
 import MovieResults from './components/MovieResults/MovieResults';
 import Home from './components/Home/Home';
 import PageNotFound from './components/PageNotFound';
-import MovieInfo from './components/MovieInfo';
+import MovieInfo from './components/MovieInfo/MovieInfo';
 
 function App() {
   const [isHome, setIsHome] = useState(true);

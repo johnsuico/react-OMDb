@@ -1,0 +1,121 @@
+.movieInfo-component-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px auto;
+}
+
+.movieInfo-container {
+  width: 90%;
+  margin: 3% auto;
+}
+
+.movieInfo-title {
+  justify-content: center;
+}
+
+.movieInfo-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.movieInfo-flex-row {
+  display: flex;
+}
+
+.movieInfoPoster {
+  width: 35%;
+}
+
+.moreMovieInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.movieInfo-header {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.director-container {
+  margin-left: 40%;
+}
+
+.movieRatings-title {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-around;
+}
+
+.movieRating {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .movieInfo-component-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .movieInfoPoster {
+    width: 500px;
+    height: 750px;
+  }
+  .movieInfo-container {
+    width: 100%;
+  }
+  .moreMovieInfo {
+    width: 80%;
+  }
+  .movieInfo-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .movieInfo-header {
+    font-size: 1.8rem;
+  }
+  .movieInfo-para {
+    font-size: 1.5rem;
+  }
+  .movieRatings-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .movieInfo-title {
+    font-size: 2.2rem;
+  }
+  .movieInfo-header {
+    font-size: 1.5rem;
+  }
+  .movieInfo-para {
+    font-size: 1.2rem;
+  }
+  .movieRatings-title {
+    font-size: 1.9rem;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .movieInfoPoster {
+    width: 300px;
+    height: 450px;
+  }
+  .movieInfo-title {
+    font-size: 1.2rem;
+  }
+  .movieInfo-header {
+    font-size: 1rem;
+  }
+  .movieInfo-para {
+    font-size: 0.8rem;
+  }
+  .movieRatings-title {
+    font-size: 1.1rem;
+  }
+}

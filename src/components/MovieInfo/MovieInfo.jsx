@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Axios from 'axios';
 
+import './movieInfo.css';
+
 function MovieInfo(props) {
   let { id } = useParams();
   const [movieInfo, setMovieInfo] = useState([]);
@@ -19,7 +21,7 @@ function MovieInfo(props) {
   }, [props, id])
 
   return(
-    <div className="container movieInfo-container">
+    <div className="container movieInfo-component-container">
       {movieInfo.Poster==="N/A" ?
         <img src="/posterNotFound.png" alt="Poster not found" className="movieInfoPoster"/>
         :
@@ -27,11 +29,11 @@ function MovieInfo(props) {
       }
       <div className="moreMovieInfo">
         <h2 className="movieInfo-container movieInfo-title">{movieInfo.Title} ({movieInfo.Year})</h2>
-        <div className="movieInfo-plot-container">
+        <div className="movieInfo-container">
           <p className="movieInfo-header">Plot Summary</p>
           <p className="movieInfo-para">{movieInfo.Plot}</p>
         </div>
-        <div className="addInfo-container movieInfo-container">
+        <div className="movieInfo-container movieInfo-flex-row">
           <div className="release-container">
             <p className="movieInfo-header">Release Date</p>
             <p className="movieInfo-para">{movieInfo.Released}</p>
@@ -41,20 +43,20 @@ function MovieInfo(props) {
             <p className="movieInfo-para">{movieInfo.Director}</p>
           </div>
         </div>
-        <div className="movieInfo-container movieInfo-flex">
+        <div className="movieInfo-container movieInfo-flex-column">
           <p className="movieInfo-header">Genres</p>
           <p className="movieInfo-para">{movieInfo.Genre}</p>
         </div>
-        <div className="movieInfo-container movieInfo-flex">
+        <div className="movieInfo-container movieInfo-flex-column">
           <p className="movieInfo-header">Actors</p>
           <p className="movieInfo-para">{movieInfo.Actors}</p>
         </div>
-        <div className="movieInfo-container movieInfo-flex">
+        <div className="movieInfo-container movieInfo-flex-column">
           <p className="movieInfo-header">Awards</p>
           <p className="movieInfo-para">{movieInfo.Awards}</p>
         </div>
         <h2 className="movieInfo-container movieRatings-title">Movie Ratings</h2>
-        <div className="movieInfo-container movieInfo-flex">
+        <div className="movieInfo-container movieInfo-flex-column">
           <div className="rating">
             <div className="imdb">
               <p className="movieInfo-header">IMDb Rating</p>
