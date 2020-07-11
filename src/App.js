@@ -10,13 +10,13 @@ import './App.css';
 
 
 // Components
-import MovieResults from './components/MovieResults';
+import MovieResults from './components/MovieResults/MovieResults';
 import Home from './components/Home/Home';
 import PageNotFound from './components/PageNotFound';
 import MovieInfo from './components/MovieInfo';
 
 function App() {
-  const [isHome, setIsHome] = useState(false);
+  const [isHome, setIsHome] = useState(true);
   const [searched, setSearched] = useState(false);
 
   let [stringQuery, setStringQuery] = useState('');

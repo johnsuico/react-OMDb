@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './movieResults.css';
 
-import MovieCard from './MovieCard';
-import MovieNotFound from './MovieNotFound';
+import MovieCard from '../MovieCard';
+import MovieNotFound from '../MovieNotFound';
 import Axios from 'axios';
 
 function MovieResults(props) {
