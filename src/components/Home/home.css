@@ -47,6 +47,7 @@
   }
 }
 
+/* iPad */
 @media only screen and (max-width: 768px) {
   .hero-bg {
     background-position-x: 85%;
@@ -62,6 +63,7 @@
   }
 }
 
+/* iPhone X */
 @media only screen and (max-width: 375px) {
   .hero-bg {
     background-position-x: 60%;

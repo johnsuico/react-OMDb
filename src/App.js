@@ -16,7 +16,7 @@ import PageNotFound from './components/PageNotFound';
 import MovieInfo from './components/MovieInfo';
 
 function App() {
-  const [isHome, setIsHome] = useState(true);
+  const [isHome, setIsHome] = useState(false);
   const [searched, setSearched] = useState(false);
 
   let [stringQuery, setStringQuery] = useState('');

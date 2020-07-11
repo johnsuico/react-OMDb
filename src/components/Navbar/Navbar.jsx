@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import '../App.css';
+import './navbar.css';
 
 function Navbar(props) {
   let [search, setSearch] = useState('');

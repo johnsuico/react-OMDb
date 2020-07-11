@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 }
 
 /* Navbar */
-nav {
+/* nav {
   margin: 0;
   padding: 0;
   height: 64px;
@@ -61,7 +62,7 @@ nav {
 
 .searchBar:focus {
   outline: none;
-}
+} */
 
 /* MovieCard */
 .showcase {

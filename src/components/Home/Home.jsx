@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Navbar/navbar.css'
 import './home.css'
 
 function Home(props) {
