@@ -3,7 +3,7 @@
 A react app that uses the OMDb Api to return search results to the user
 
 **Demo**
-- Demo GIF not yet created
+![Lookup Demo](demo/lookup_demo.gif)
   ***Demo Website***
   - https://react-omdb-suico.herokuapp.com
 
@@ -26,3 +26,5 @@ The MERN stack was used to create this project
 - Express
 - React
 - Node
+
+The OMdb API was used in order to fetch the search results
